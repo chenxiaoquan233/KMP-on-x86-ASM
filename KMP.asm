@@ -19,7 +19,7 @@ DATA SEGMENT
 	  FOUND DB 'FOUND','$'
 	 NFOUND DB 'NOT FOUND','$'
         NEWLINE DB 0DH,0AH,'$'     ; end of line: '\r','\n'
-	   NEXT DB 256 DUP('$')    ; next array in KMP
+	   NEXT DB 256 DUP(0)    ; next array in KMP
 DATA ENDS
 
 STACK SEGMENT STACK
