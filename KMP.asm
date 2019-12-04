@@ -177,11 +177,11 @@ CODE SEGMENT
                 XOR DI,DI
 		
 	  FIND:	MOV BL,STRA.LEN
-                CMP SI,BX
-                JNB KMPCMP
-                MOV BL,STRB.LEN
                 CMP DI,BX
                 JGE KMPCMP
+                MOV BL,STRB.LEN
+                CMP SI,BX
+                JNB KMPCMP
 
                 CMP DI,0FFFFH
                 JE KMPIF
@@ -204,7 +204,7 @@ CODE SEGMENT
 
 	KMPCMP: MOV BL,STRA.LEN
                 CMP SI,BX
-                JE KMPE
+                JGE KMPE
                 MOV DX,0FFFFH
                 JMP KMPEND
 		
